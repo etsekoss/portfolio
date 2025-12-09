@@ -187,3 +187,8 @@ Ce site a pour objectifs de :
 
 
 Dernière mise à jour effectué depuis macOS.
+---
+
+## ✨ Amélioration en cours
+
+Cette section a été ajoutée depuis la branche **feature-readme** dans le cadre de l’apprentissage des branches Git.
