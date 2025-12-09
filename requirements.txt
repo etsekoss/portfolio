@@ -1,0 +1,5 @@
+Django>=5.1,<5.2
+pillow>=11.0
+requests>=2.32
+python-slugify>=8.0
+sqlparse>=0.5

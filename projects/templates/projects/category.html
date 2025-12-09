@@ -1,0 +1,49 @@
+{% extends 'projects/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .custom-heading {
+        font-size: 60px; /* Taille spécifique */
+        font-weight: bold; /* Texte gras */
+        color: #87CEEB; /* Couleur violette */
+        text-align: center; /* Centrage horizontal */
+        margin: 1px 0; /* Espacement vertical */
+    }
+</style>
+
+<div class="container mx-auto my-8 px-4">
+    <!-- Centrage horizontal de Machine Learning -->
+    <div class="flex justify-center">
+        <h1 class="custom-heading">
+            <strong>{{ category_name }}</strong>
+        </h1>
+    </div>
+    <!-- Description -->
+    <p class="text-center text-gray-600 mb-12">
+        Bienvenue dans la rubrique {{ category_name }}. Découvrez les projets et travaux liés à ce domaine.
+    </p>
+
+    <!-- Grille des projets -->
+    <div class="grid-container">
+        {% for project in projects %}
+        <div class="project-card">
+            <a href="{% url 'project_detail' project.id %}">
+                {% if project.image %}
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}" class="custom-image">
+                {% else %}
+                    <img src="{% static 'images/default.png' %}" alt="Image par défaut" class="custom-image">
+                {% endif %}
+                <div class="custom-content">
+                    <h3 class="custom-title">{{ project.title }}</h3>
+                    <p class="custom-description">{{ project.description|truncatewords:6 }}</p>
+                    <p class="custom-technologies"><strong>Technologies :</strong> {{ project.technologies }}</p>
+                </div>
+            </a>
+        </div>
+        {% empty %}
+        <p class="text-center text-gray-500 col-span-full">Aucun projet trouvé pour le moment.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

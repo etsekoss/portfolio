@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon Portfolio{% endblock %}</title>
+    <!-- Lien vers le fichier CSS général -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Fond clair pour toute la page */
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-end; /* Aligne les liens à droite */
+            align-items: center;
+            background-color: #343a40; /* Couleur de fond de la navbar */
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px; /* Taille du texte */
+            font-weight: bold;
+            padding: 8px 15px;
+            margin-left: 10px; /* Espacement entre les liens */
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #ffffff;
+            color: #343a40; /* Couleur de texte au survol */
+        }
+    </style>
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <a href="{% url 'home' %}">Accueil</a>
+        <a href="{% url 'technologies' %}">Technologies</a>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

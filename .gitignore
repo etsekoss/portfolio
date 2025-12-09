@@ -1,0 +1,29 @@
+# ===== SYSTEME =====
+.DS_Store
+._*
+Thumbs.db
+
+# ===== ENV PYTHON =====
+.venv/
+venv/
+env/
+
+# ===== PYTHON / DJANGO =====
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+local_settings.py
+
+# ===== BASE DE DONNEES =====
+db.sqlite3
+
+# ===== NODE / FRONT =====
+node_modules/
+
+# ===== STATIC BUILD =====
+staticfiles/
+
+# ===== VS CODE =====
+.vscode/

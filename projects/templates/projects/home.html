@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kossivi Etse - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9; /* Fond gris clair pour la lisibilité */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #2c3e50; /* Bleu-gris moderne */
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-left img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar-left .about-me {
+            color: white;
+            font-size: 0.9rem;
+            line-height: 1.2;
+        }
+
+        .navbar-left .about-me strong {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #18bc9c; /* Vert doux pour le contraste */
+            text-decoration: underline;
+        }
+
+        .navbar .dropdown-menu {
+            background-color: #34495e;
+            border: none;
+        }
+
+        .navbar .dropdown-item {
+            color: white;
+        }
+
+        .navbar .dropdown-item:hover {
+            background-color: #18bc9c; /* Vert doux au survol */
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin: 40px 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .main-content h2 {
+            color: #2c3e50; /* Bleu-gris pour le titre principal */
+            font-size: 2rem;
+        }
+
+        .projects {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background-color: #3498db; /* Bleu clair et moderne */
+            color: white;
+            padding: 15px 20px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            background-color: #2980b9; /* Plus foncé au survol */
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50; /* Correspond à la navbar */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        .footer a {
+            color: #18bc9c; /* Vert doux pour les liens */
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="{% static 'images/your_photo.jpg' %}" alt="Kossivi Etse">
+            <div class="about-me">
+                <strong>Kossivi ETSE</strong><br>
+                Data Engineer / Data Scientist / Web Developer
+            </div>
+        </div>
+        <div>
+            <a href="{% url 'home' %}">Accueil</a>
+            <a href="{% url 'technologies' %}">Technologies</a>
+            <div class="dropdown d-inline">
+                <a href="#" class="dropdown-toggle" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mes projets</a>
+                <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                    <li><a class="dropdown-item" href="/projects/web-development/">Développement Web</a></li>
+                    <li><a class="dropdown-item" href="/projects/mobile-development/">Développement Mobile</a></li>
+                    <li><a class="dropdown-item" href="/projects/data-engineering/">Data Ingénierie</a></li>
+                    <li><a class="dropdown-item" href="/projects/deep-learning/">Deep Learning</a></li>
+                    <li><a class="dropdown-item" href="/projects/machine-learning/">Machine Learning</a></li>
+                </ul>
+            </div>
+            <a href="#">Blog</a>
+            <a href="#">A propos</a>
+            <a href="{% static 'files/cv_kossivi.pdf' %}" target="_blank">Mon CV PDF</a>
+            <a href="/contact/">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2 class="text-center">Bienvenue sur ma page web</h2>
+        <!-- Projects Section -->
+        <div class="projects d-flex flex-wrap justify-content-center">
+            <!-- Contenu des projets -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 Kossivi Etse - Tous droits réservés. Retrouvez-moi sur <a href="https://www.linkedin.com/in/kossivi-etse-98033022a/" target="_blank">LinkedIn</a>.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
